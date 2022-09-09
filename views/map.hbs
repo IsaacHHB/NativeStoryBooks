@@ -1,0 +1,101 @@
+<style>
+    #map {
+        height: 800px;
+        width: 100% !important;
+    }
+</style>
+
+{{!-- <h1>My Google Map</h1> --}}
+<div id="map"></div>
+
+<script>
+    function initMap() {
+        //map options
+        var options = {
+            zoom: 8,
+            center: { lat: 38.5816, lng: -121.4944 }
+        }
+        //new map
+        var map = new google.maps.Map(document.getElementById('map'), options)
+
+        //Listen for click on map
+        /* google.maps.event.addListener(map, 'click', function() {
+             function (event){
+                 //add marker
+                 addMarker({coords: event.latLng});
+             }
+         });
+ 
+ 
+         addMarker({
+             coords:{ lat: 38.5816, lng: -121.4944 },
+             content: '<h1>Sacramento CA</h1>'
+         });
+ 
+         //add marker function
+         function addMarker(props) {
+             const marker = new google.maps.Marker({
+                 position: props.coords,
+                 map: map,
+             });
+             //check content
+             if (props.content) {
+                 const infoWindow = new google.maps.infoWindow({
+                     content: props.content
+                 });
+ 
+                 marker.addListener('click', function () {
+                     infoWindow.open(map, marker);
+                 });
+             }
+         }
+         */
+
+        //add marker
+        const marker = new google.maps.Marker({
+            position: { lat: 38.5816, lng: -121.4944 },
+            map: map,
+        });
+        map.addListener("click", (e) => {
+            placeMarkerAndPanTo(e.latLng, map);
+            console.log(e.latLng)
+        });
+        function placeMarkerAndPanTo(latLng, map) {
+            new google.maps.Marker({
+                position: latLng,
+                map: map,
+            });
+            map.panTo(latLng);
+        }
+        //function addInfoWindow(marker, message) {
+        //
+        //    var infoWindow = new google.maps.InfoWindow({
+        //        content: message
+        //    });
+        //
+        //    google.maps.event.addListener(marker, 'click', function () {
+        //        infoWindow.open(map, marker);
+        //    });
+        //}
+        function createMarker(lat, lon, html) {
+            var newmarker = new google.maps.Marker({
+                position: new google.maps.LatLng(lat, lon),
+                map: map,
+                title: html
+            });
+
+            newmarker['infowindow'] = new google.maps.InfoWindow({
+                content: html
+            });
+
+            google.maps.event.addListener(newmarker, 'mouseover', function () {
+                this['infowindow'].open(map, this);
+            });
+        }
+    }
+</script>
+
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbJ7-76ksY34wUPFi5uP7Ouj8zA5PzTLQ&callback=initMap&v=weekly"
+    defer>
+    </script>

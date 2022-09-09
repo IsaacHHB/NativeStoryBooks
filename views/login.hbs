@@ -1,0 +1,32 @@
+<h3><i class="fas fa-book-reader"></i> Native StoryBooks</h3>
+<div class="section">
+    <p class="lead">Create public or private traditional stories about your tribe</p>
+</div>
+<div class="divider"></div>
+<div class="section">
+    {{!-- {{#if (locals.messages.errors)}}
+    {{#each messages.errors}}
+    <div class="alert alert-danger">
+        {{msg}}
+    </div>
+    {{#if (locals.messages.errors)}}
+    {{#each messages.errors}}
+    <div class="alert alert-danger">
+        {{msg}}
+    </div> --}}
+    {{#if error}}
+    <div class="alert alert-danger">{{error}}</div>
+    {{/if}}
+    {{#if error}}
+    <div class="alert alert-danger">{{error}}</div>
+    {{/if}}
+
+    <form action="/login" method="POST">
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <input class="btn blue darken-1 marginBottom" type="submit" value="Login">
+    </form>
+    <a href="/register" class="btn blue darken-1 marginBottom">
+        <span>Register</span>
+    </a>
+</div>
