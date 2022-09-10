@@ -29,3 +29,17 @@ input::placeholder{
     color: black;
 }
 
+.background {
+    background: url("/images/devilstower.jpg")center;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.background-tipi {
+    background: url("/images/tipi.webp")center;
+    background-repeat: no-repeat;
+    background-position-y: calc(-250px);
+    background-size: cover;
+}
+
