@@ -1,4 +1,5 @@
 const Story = require('../models/Story')
+const User = require('../models/User')
 
 module.exports = {
     // @desc    Show add page
@@ -8,8 +9,8 @@ module.exports = {
         res.render('stories/add')
     },
 
-// @desc    Process the add form
-// @route   GET /stories
+    // @desc    Process the add form
+    // @route   GET /stories
 
     postDashboard: async (req, res) => {
         try {
@@ -22,16 +23,16 @@ module.exports = {
         }
     },
 
-// @desc    Show all stories
-// @route   GET /stories
+    // @desc    Show all stories
+    // @route   GET /stories
 
     getStories: async (req, res) => {
         try {
-            const stories = await Story.find({ status: 'public' })
+            let stories = await Story.find({ status: 'public' })
                 .populate('user')
                 .sort({ createdAt: 'desc' })
                 .lean()
-
+            stories = stories.filter(story => story.user)
             res.render('stories/index', {
                 stories,
             })
@@ -41,8 +42,8 @@ module.exports = {
         }
     },
 
-// @desc    Show single story
-// @route   GET /stories/:id
+    // @desc    Show single story
+    // @route   GET /stories/:id
 
     getSingleStory: async (req, res) => {
         try {
@@ -63,8 +64,8 @@ module.exports = {
         }
     },
 
-// @desc    Show edit page
-// @route   GET /stories/edit/:id
+    // @desc    Show edit page
+    // @route   GET /stories/edit/:id
 
     getEditPage: async (req, res) => {
         try {
@@ -90,8 +91,8 @@ module.exports = {
 
     },
 
-// @desc    Update story
-// @route   PUT /stories/:id
+    // @desc    Update story
+    // @route   PUT /stories/:id
 
     updateStory: async (req, res) => {
         try {
@@ -117,8 +118,8 @@ module.exports = {
         }
     },
 
-// @desc    Delete story
-// @route   DELETE /stories/:id
+    // @desc    Delete story
+    // @route   DELETE /stories/:id
 
     deleteStory: async (req, res) => {
         try {
@@ -130,8 +131,8 @@ module.exports = {
         }
     },
 
-// @desc    User stories
-// @route   GET /stories/user/:userId
+    // @desc    User stories
+    // @route   GET /stories/user/:userId
 
     getUserStories: async (req, res) => {
         try {
@@ -151,11 +152,12 @@ module.exports = {
         }
     },
 
-// @desc    Map
-// @route   GET /map
+    // @desc    Map
+    // @route   GET /map
 
     getMap: async (req, res) => {
         try {
+            console.log("getMap error! -------------------------------------------")
             const stories = await Story.find({ user: req.user.id }).lean()
             res.render('map', {
                 name: req.user.firstName,
@@ -163,7 +165,8 @@ module.exports = {
             })
         } catch (err) {
             console.error(err)
-            res.render('error/500')
+            return res.render('error/500')
         }
-    },
-}
+    }
+
+} 

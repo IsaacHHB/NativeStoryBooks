@@ -18,4 +18,5 @@ router.post('/register', authController.postRegister)
 
 router.get('/dashboard', ensureAuth, authController.getDashboard)
 
+
 module.exports = router

@@ -10,6 +10,8 @@ router.post('/', ensureAuth, storiesController.postDashboard)
 
 router.get('/', ensureAuth, storiesController.getStories)
 
+router.get('/map', ensureAuth, storiesController.getMap)
+
 router.get('/:id', ensureAuth, storiesController.getSingleStory)
 
 router.get('/edit/:id', ensureAuth, storiesController.getEditPage)
@@ -20,7 +22,6 @@ router.delete('/:id', ensureAuth, storiesController.deleteStory)
 
 router.get('/user/:userid', ensureAuth, storiesController.getUserStories)
 
-router.get('/map', ensureAuth, storiesController.getMap)
 
 
 
