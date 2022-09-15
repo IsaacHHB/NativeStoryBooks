@@ -10,6 +10,7 @@ const UserSchema = new mongoose.Schema({
   },
   tribalAffiliation: {
     type: String,
+    required: true,
   }
 })
 

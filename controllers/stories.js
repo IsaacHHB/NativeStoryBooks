@@ -157,7 +157,6 @@ module.exports = {
 
     getMap: async (req, res) => {
         try {
-            console.log("getMap error! -------------------------------------------")
             const stories = await Story.find({ user: req.user.id }).lean()
             res.render('map', {
                 name: req.user.firstName,
