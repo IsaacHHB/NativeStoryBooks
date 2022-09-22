@@ -43,8 +43,4 @@ input::placeholder{
     background-size: cover;
 }
 
-#map {
-    height: 830px;
-    width: 100% !important;
-}
 
