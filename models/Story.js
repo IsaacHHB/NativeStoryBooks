@@ -24,9 +24,6 @@ const StorySchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    // coordinates:{
-    //     lat: Number,
-    // }
 })
 
 module.exports = mongoose.model('Story', StorySchema, 'Story\'s')
