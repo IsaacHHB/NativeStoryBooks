@@ -50,6 +50,7 @@ module.exports = {
             let story = await Story.findById(req.params.id)
                 .populate('user')
                 .lean()
+                
 
             if (!story) {
                 return res.render('error/404')

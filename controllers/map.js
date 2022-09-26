@@ -2,19 +2,24 @@ const Story = require('../models/Story')
 const User = require('../models/User')
 
 module.exports = {
+
+    // @desc  Get all stores
+    // @route GET /api/v1/stores
+    // @access Public
+
     getMap: async (req, res, next) => {
         try {
-            const stories = await Story.find();
-        
+            const stories = await Story.find( { status: 'public' } );
+
             return res.status(200).json({
-              success: true,
-              count: stories.length,
-              data: stories
+                success: true,
+                count: stories.length,
+                data: stories
             });
-          } catch (err) {
+        } catch (err) {
             console.error(err);
             res.status(500).json({ error: 'Server error' });
-          }
+        }
     },
 
 
