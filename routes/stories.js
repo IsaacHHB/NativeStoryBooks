@@ -10,7 +10,9 @@ router.post('/', ensureAuth, storiesController.postDashboard)
 
 router.get('/', ensureAuth, storiesController.getStories)
 
-router.get('/map', ensureAuth, storiesController.getMap)
+// router.get('/map', ensureAuth, storiesController.getMap)
+
+// router.post('/map/add', ensureAuth, storiesController.addStory)
 
 router.get('/:id', ensureAuth, storiesController.getSingleStory)
 
@@ -21,6 +23,10 @@ router.put('/:id', ensureAuth, storiesController.updateStory)
 router.delete('/:id', ensureAuth, storiesController.deleteStory)
 
 router.get('/user/:userid', ensureAuth, storiesController.getUserStories)
+
+
+//MAKE THE MAPS PUBLIC HTML!!!!! <---------------------------<-----------------------<---------------------
+
 
 
 

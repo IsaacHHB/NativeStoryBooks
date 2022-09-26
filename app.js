@@ -93,6 +93,7 @@ app.use(flash());
 app.use('/', mainRoutes);
 // app.use('/auth', require('./routes/auth'))
 app.use('/stories', storiesRoutes);
+app.use('/api/v1/stories', require('./routes/map'));
 
 
 const PORT = process.env.PORT || 3000

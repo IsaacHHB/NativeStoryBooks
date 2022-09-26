@@ -152,20 +152,4 @@ module.exports = {
         }
     },
 
-    // @desc    Map
-    // @route   GET /map
-
-    getMap: async (req, res) => {
-        try {
-            const stories = await Story.find({ user: req.user.id }).lean()
-            res.render('map', {
-                name: req.user.firstName,
-                stories
-            })
-        } catch (err) {
-            console.error(err)
-            return res.render('error/500')
-        }
-    }
-
 } 
