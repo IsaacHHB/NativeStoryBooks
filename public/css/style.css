@@ -122,6 +122,11 @@ h1 {
     padding: 20px 2px;
 }
 
+input[type=text]:not(.browser-default){
+    color: black;
+    background-color:#fff;
+}
+
 .head {
     margin: 5% 5%;
     color: white;
