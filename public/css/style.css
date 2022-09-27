@@ -122,9 +122,9 @@ h1 {
     padding: 20px 2px;
 }
 
-input[type=text]:not(.browser-default){
+input[type=text]:not(.browser-default) {
     color: black;
-    background-color:#fff;
+    background-color: #fff;
 }
 
 .head {
@@ -163,7 +163,7 @@ a:hover {
 .mapboxgl-popup-content {
     font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', sans-serif;
     padding: 0;
-    width: 250%;
+    width: 200%;
 }
 
 .mapboxgl-popup-content h3 {
@@ -217,6 +217,12 @@ media querys
     }
 }
 
+@media screen and (max-width: 1218px) {
+    .mapboxgl-popup-content {
+        width: 200px;
+    }
+}
+
 @media screen and (max-width: 1000px) {
 
     .sidebar,
@@ -233,10 +239,12 @@ media querys
     .sidebar {
         margin-top: 15%;
     }
-    .head{
+
+    .head {
         margin: 15% 0;
     }
-    .mediaFix{
+
+    .mediaFix {
         font-size: 2rem;
     }
 
