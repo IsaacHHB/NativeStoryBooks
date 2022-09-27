@@ -50,7 +50,7 @@ async function getMap() {
         .setPopup(
           new mapboxgl.Popup({ offset: 25 }) // add popups
             .setHTML(
-              `<h3>${feature.properties.title}</h3><p>${feature.properties.body}</p>`
+              `<h3>${feature.properties.title}</h3><p class="scroll">${feature.properties.body}</p>`
             )
         )
         .addTo(map);

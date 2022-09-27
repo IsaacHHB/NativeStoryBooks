@@ -142,6 +142,8 @@ a:hover {
     text-decoration: none;
 }
 
+
+
 .marker {
     border: none;
     cursor: pointer;
@@ -184,6 +186,12 @@ a:hover {
 
 .mapboxgl-popup-content div {
     padding: 10px;
+}
+
+.mapboxgl-popup-content .scroll{
+    height:200px;
+    overflow:scroll;
+    overflow-x:hidden;
 }
 
 .mapboxgl-popup-anchor-top>.mapboxgl-popup-content {
