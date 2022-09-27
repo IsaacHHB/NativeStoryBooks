@@ -6,7 +6,7 @@ const StorySchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please add a title'],
         trim: true,
-        maxlength: [15, 'Title must be less than 15 chars']
+        maxlength: [40, 'Title must be less than 40 chars']
     },
     body: {
         type: String,
