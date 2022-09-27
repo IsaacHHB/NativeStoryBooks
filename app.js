@@ -96,7 +96,7 @@ app.use('/stories', storiesRoutes);
 app.use('/api/v1/stories', require('./routes/map'));
 
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3000
 
 app.listen(PORT,
     console.log(`Server running on ${process.env.NODE_ENV} mode on port ${PORT}`)
