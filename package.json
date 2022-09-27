@@ -6,7 +6,7 @@
     "start": "cross-env NODE_ENV=production node app",
     "dev": "cross-env NODE_ENV=development nodemon app"
   },
-  "author": "",
+  "author": "Isaac",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
