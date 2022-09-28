@@ -2,7 +2,7 @@
 <h3>Welcome {{name}}</h3>
 <p>Here are your stories</p>
 {{#if stories}}
-    <table class="striped">
+    <table class="striped transBlack">
         <thead>
             <tr>
                 <th>Title</th>
@@ -13,8 +13,8 @@
         </thead>
         <tbody>
             {{#each stories}}
-                <tr class="white">
-                    <td><a href="/stories/{{_id}}">{{title}}</a></td>
+                <tr class="transWhite">
+                    <td class="title"><a href="/stories/{{_id}}" class="title">{{title}}</a></td>
                     <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
                     <td><span class="dash-status">{{status}}</span></td>
                     <td>
