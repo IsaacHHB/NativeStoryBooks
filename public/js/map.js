@@ -83,12 +83,26 @@ function loadMap(stories) {
   });
 }
 
+// add the coordinates to the form
 
 map.on('click', async (e) => {
   let lng = e.lngLat.lng
   let lat = e.lngLat.lat
-  document.querySelector('.lng').value = lng;
-  document.querySelector('.lat').value = lat;
+
+  if (confirm(`Do you wish to add a story to these coordinates ${e.lngLat.lng} ${e.lngLat.lat}?`)) {
+    document.querySelector('.lng').value = lng;
+    document.querySelector('.lat').value = lat;
+    openForm();
+  }
 });
+
+//form popup functions 
+
+function openForm() {
+  document.getElementById("popupForm").style.display = "block";
+}
+function closeForm() {
+  document.getElementById("popupForm").style.display = "none";
+}
 
 getMap();

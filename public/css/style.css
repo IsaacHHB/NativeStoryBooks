@@ -74,8 +74,7 @@ input::placeholder {
 
 #map {
     position: absolute;
-    left: 33.3333%;
-    width: 66.6666%;
+    width: 100%;
     margin-top: 4%;
     height: 100%;
     top: 0;
@@ -83,7 +82,7 @@ input::placeholder {
 }
 
 label {
-    color: #fff;
+    color: rgb(0, 0, 0);
     font-size: 1.2rem;
 }
 
@@ -220,6 +219,53 @@ a:hover {
     font-size: 1.2rem;
 }
 
+/* form pop up styling */
+
+  .formPopup {
+    display: none;
+    position: fixed;
+    left: 45%;
+    top: 5%;
+    width: 50%;
+    transform: translate(-50%, 5%);
+
+    z-index: 9;
+  }
+  .formContainer {
+    padding: 20px;
+    background-color: #fff;
+  }
+  .formContainer input[type=text],
+  .formContainer input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 20px 0;
+    border: none;
+    background: rgb(199, 196, 196);
+  }
+  .formContainer input[type=text]:focus,
+  .formContainer input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  .formContainer .btn {
+    padding: 12px 20px;
+    border: none;
+    background-color: #2f8897;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 15px;
+    opacity: 0.8;
+  }
+  .formContainer .cancel {
+    background-color: #cc0000;
+  }
+  .formContainer .btn:hover,
+  .openButton:hover {
+    opacity: 1;
+  }
+
 
 /* 
 media querys 
@@ -241,18 +287,8 @@ media querys
 
 @media screen and (max-width: 1000px) {
 
-    .sidebar,
-    #map {
-        width: 100%;
-    }
 
-    #map {
-        left: 0;
-        top: 850px;
-        height: 70%;
-    }
-
-    .sidebar {
+    #map{
         margin-top: 15%;
     }
 
@@ -262,6 +298,9 @@ media querys
 
     .mediaFix {
         font-size: 2rem;
+    }
+    .formPopup{
+        width: 70%;
     }
 
 }

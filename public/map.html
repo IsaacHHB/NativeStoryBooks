@@ -39,42 +39,36 @@
             </ul>
         </div>
     </nav>
+    <div class="loginPopup">
+        <div class="formPopup" id="popupForm">
+            <form id="store-form" class="mb-4 formContainer">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" class="form-control" />
+                </div>
 
-    <div class="sidebar" id="storyForm">
+                <div class="form-group">
+                    <label id="info" for="title">Longitude</label>
+                    <input type="text" id="lng" class="form-control lng" value="" />
+                </div>
 
-        <div class="head">
-            <h1 class="mediaFix">Add Your Traditional Story</h1>
-            <h3>Click on the map where the story takes place</h3>
+                <div class="form-group">
+                    <label id="info" for="title">Latitude</label>
+                    <input type="text" id="lat" class="form-control lat" value="" />
+                </div>
+
+                <div class="form-group">
+                    <label for="body">Tell Us A Traditional Story:</label>
+                    <textarea name="body" id="body" class="form-control"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+
         </div>
-
-        <form id="store-form" class="mb-4">
-            <div class="form-group">
-                <label for="title">Title</label>
-                <input type="text" id="title" class="form-control" />
-            </div>
-
-            <div class="form-group">
-                <label id="info" for="title">Longitude</label>
-                <input type="text" id="lng" class="form-control lng" value="" />
-            </div>
-
-            <div class="form-group">
-                <label id="info" for="title">Latitude</label>
-                <input type="text" id="lat" class="form-control lat" value="" />
-            </div>
-
-            <div class="form-group">
-                <label for="body">Tell Us A Traditional Story:</label>
-                <textarea name="body" id="body" class="form-control"></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <a href="/dashboard" class="btn btn-secondary">Back</a>
-        </form>
-
     </div>
     <div id="map"></div>
-
 
     <script src="js/map.js"></script>
     <script src="js/add.js"></script>
@@ -86,8 +80,6 @@
         M.Sidenav.init(document.querySelector('.sidenav'))
         M.FormSelect.init(document.querySelector('#status'))
     </script>
-
-
 </body>
 
 </html>
