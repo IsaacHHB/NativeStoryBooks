@@ -85,7 +85,7 @@ function loadMap(stories) {
 
 // add the coordinates to the form
 
-map.on('click', async (e) => {
+map.on('dblclick', (e) => {
   let lng = e.lngLat.lng
   let lat = e.lngLat.lat
 
