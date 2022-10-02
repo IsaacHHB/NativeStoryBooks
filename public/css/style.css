@@ -223,9 +223,9 @@ a:hover {
 
   .formPopup {
     display: none;
-    position: fixed;
+    position: absolute;
     left: 45%;
-    top: 5%;
+    top: 10%;
     width: 50%;
     transform: translate(-50%, 5%);
 
@@ -233,12 +233,16 @@ a:hover {
   }
   .formContainer {
     padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-flow: column wrap;
     background-color: #fff;
   }
   .formContainer input[type=text],
   .formContainer input[type=password] {
     width: 100%;
-    padding: 15px;
+    padding: 5px;
     margin: 5px 0 20px 0;
     border: none;
     background: rgb(199, 196, 196);
@@ -268,20 +272,16 @@ a:hover {
   .hover{
     background-color: rgba(0, 0, 0, 0.658);
     display: flex;
-    position:relative;
+    justify-content: space-evenly;
+    position:fixed;
     left: 50%;
-    top: 10%;
-    width: 65%;
+    top: 7%;
+    width: 100%;
     transform: translate(-50%, 5%);
-
     z-index: 9;
   }
-  .spacing {
-    width: 40%;
-  }
   .coords {
-    margin: 1% 0 0 10%;
-
+    margin: 1% 0;
     width: 20%;
     height: 40% !important;
     color: #ddd;
@@ -290,9 +290,13 @@ a:hover {
 
   .mapInstructions {
     width: 60%;
-    font-size: 2rem ;
+    font-size: 1.4rem ;
     line-height: 100%;
     color: #fff;
+  }
+
+  .addWidth {
+    width: 100% !important;
   }
 
 
