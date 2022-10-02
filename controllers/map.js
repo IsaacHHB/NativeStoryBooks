@@ -9,12 +9,15 @@ module.exports = {
 
     getMap: async (req, res, next) => {
         try {
-            const stories = await Story.find( { status: 'public' } );
-
+            const stories = await Story.find({ status: 'public' })
+                .populate('user')
+                .sort({ createdAt: 'desc' })
+                .lean()
+    
             return res.status(200).json({
                 success: true,
                 count: stories.length,
-                data: stories
+                data: stories 
             });
         } catch (err) {
             console.error(err);

@@ -167,14 +167,29 @@ a:hover {
     width: 200%;
 }
 
+.mapboxgl-popup-content h2, .mapboxgl-popup-content h2 a{
+    background: #e23b3b;
+    color: #fff;
+    margin: 0;
+
+    border-radius: 3px 3px 0 0;
+    font-weight: 700;
+    margin-top: -15px;
+}
+
+.mapboxgl-popup-content h2 a:hover{
+    color: #6b6b6b;
+}
+
 .mapboxgl-popup-content h3 {
     background: #e23b3b;
     color: #fff;
     margin: 0;
     padding: 10px;
+    border-top: 1px solid black;
     border-radius: 3px 3px 0 0;
     font-weight: 700;
-    margin-top: -15px;
+
 }
 
 .mapboxgl-popup-content h4 {

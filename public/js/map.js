@@ -33,7 +33,9 @@ async function getMap() {
       },
       properties: {
         title: story.title,
-        body: story.body
+        body: story.body,
+        user: story.user.userName,
+        userId: story.user._id
       }
     };
   });
@@ -50,7 +52,7 @@ async function getMap() {
         .setPopup(
           new mapboxgl.Popup({ offset: 25 }) // add popups
             .setHTML(
-              `<h3>${feature.properties.title}</h3><p class="scroll">${feature.properties.body}</p>`
+              `<h2>Story By: <a href ="/stories/user/${feature.properties.userId}">${feature.properties.user}</a></h2><h3>${feature.properties.title}</h3><p class="scroll">${feature.properties.body}</p>`
             )
         )
         .addTo(map);
