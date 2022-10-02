@@ -73,7 +73,7 @@ input::placeholder {
 }
 
 #map {
-    position: absolute;
+    position: fixed;
     width: 100%;
     margin-top: 4%;
     height: 100%;
@@ -264,6 +264,35 @@ a:hover {
   .formContainer .btn:hover,
   .openButton:hover {
     opacity: 1;
+  }
+  .hover{
+    background-color: rgba(0, 0, 0, 0.658);
+    display: flex;
+    position:relative;
+    left: 50%;
+    top: 10%;
+    width: 65%;
+    transform: translate(-50%, 5%);
+
+    z-index: 9;
+  }
+  .spacing {
+    width: 40%;
+  }
+  .coords {
+    margin: 1% 0 0 10%;
+
+    width: 20%;
+    height: 40% !important;
+    color: #ddd;
+    background-color: #2f8897;
+  }
+
+  .mapInstructions {
+    width: 60%;
+    font-size: 2rem ;
+    line-height: 100%;
+    color: #fff;
   }
 
 

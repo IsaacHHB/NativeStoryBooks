@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> -->
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
         integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
@@ -68,13 +70,31 @@
 
         </div>
     </div>
+    <div class="hover">
+        <p class="mapInstructions">Just click on the map where the story takes place and then click on this button.</p>
+        <!-- <div class="spacing">
+            <label id="info" for="title">Longitude</label>
+            <input type="text" id="lng" class="form-control lng" value="" />
+        </div>
+
+        <div class="spacing">
+            <label id="info" for="title">Latitude</label>
+            <input type="text" id="lat" class="form-control lat" value="" />
+        </div> -->
+        <div class="btn coords" onclick="openForm()">
+            Add story
+        </div>
+    </div>
     <div id="map"></div>
+
+    
 
     <script src="js/map.js"></script>
     <script src="js/add.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.14.1/ckeditor.js"
         integrity="sha256-bEIQpI72w9NJuIVhTLFUF2/8uxl0u5800r8ddViuv+o=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script>
         M.Sidenav.init(document.querySelector('.sidenav'))

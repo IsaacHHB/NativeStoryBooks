@@ -58,6 +58,8 @@ async function getMap() {
 }
 
 
+
+
 // Load map with stores
 function loadMap(stories) {
   map.on('load', function() {
@@ -85,16 +87,14 @@ function loadMap(stories) {
 
 // add the coordinates to the form
 
-map.on('dblclick', (e) => {
+map.on('click', (e) => {
   let lng = e.lngLat.lng
   let lat = e.lngLat.lat
 
-  if (confirm(`Do you wish to add a story to these coordinates ${e.lngLat.lng} ${e.lngLat.lat}?`)) {
     document.querySelector('.lng').value = lng;
     document.querySelector('.lat').value = lat;
-    openForm();
-  }
 });
+
 
 //form popup functions 
 
@@ -106,3 +106,4 @@ function closeForm() {
 }
 
 getMap();
+map.doubleClickZoom.disable()
