@@ -49,6 +49,7 @@ module.exports = {
         try {
             let story = await Story.findById(req.params.id)
                 .populate('user')
+                .sort({ createdAt: 'desc' })
                 .lean()
                 
 
@@ -93,7 +94,7 @@ module.exports = {
     },
 
     // @desc    Update story
-    // @route   PUT /stories/:id
+    // @route   PUT /stories/edit/:id
 
     updateStory: async (req, res) => {
         try {
