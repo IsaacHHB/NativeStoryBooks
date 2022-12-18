@@ -33,7 +33,6 @@ module.exports = {
     addStory: async (req, res, next) => {
         try {
             req.body.user = req.user.id
-            console.log(req.body)
             const story = await Story.create(req.body)
             return res.status(201).json({
                 success: true,

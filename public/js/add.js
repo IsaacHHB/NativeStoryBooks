@@ -31,9 +31,9 @@ async function addStory(e) {
       },
       body: JSON.stringify(sendBody)
     });
-
+    
     if (res.status === 400) {
-      throw Error('Store already exists!');
+      throw Error('Story already exists!');
     }
       
     

@@ -25,7 +25,7 @@ router.delete('/:id', ensureAuth, storiesController.deleteStory)
 router.get('/user/:userid', ensureAuth, storiesController.getUserStories)
 
 
-//MAKE THE MAPS PUBLIC HTML!!!!! <---------------------------<-----------------------<---------------------
+//! MAKE THE MAPS PUBLIC HTML!!!!! <---------------------------<-----------------------<---------------------
 
 
 

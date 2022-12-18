@@ -15,11 +15,10 @@ map.on('load', () => {
   map.setFog({});
 });
 
-// Fetch stores from API
+// Fetch stories from API
 async function getMap() {
   const res = await fetch('/api/v1/stories');
   const data = await res.json();
-  console.log(data)
 
   const stories = data.data.map(story => {
     return {
