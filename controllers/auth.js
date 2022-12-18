@@ -5,7 +5,7 @@ const Story = require('../models/Story')
 
 exports.getLogin = (req, res) => {
   if (req.user) {
-    return res.redirect('/dashboard')//this was todos
+    return res.redirect('/dashboard')
   }
   res.render('login', {
     title: 'Login',
@@ -60,7 +60,8 @@ exports.getDashboard = async (req, res) => {
     const stories = await Story.find({ user: req.user.id }).lean()
     res.render('dashboard', {
       name: req.user.userName,
-      stories
+      _id: req.user._id,
+      stories,
     })
   } catch (err) {
     console.error(err)
@@ -108,4 +109,56 @@ exports.postRegister = (req, res, next) => {
       })
     })
   })
+}
+// @desc    Show edit page
+// @route   GET /edit/:id
+
+exports.getEditProfile = async (req, res) => {
+  try {
+    const user = await User.findOne({
+      _id: req.params.id
+    }).lean()
+
+    if (!user) {
+      return res.render('error/404')
+    }
+    if (user._id != req.user.id) {
+      res.redirect('/dashboard')
+
+    } else {
+      res.render('profile/edit', {
+        user,
+        layout: 'login',
+      })
+    }
+  } catch (err) {
+    console.error(err)
+    return res.render('error/500')
+  }
+
+}
+
+// @desc    Update story
+// @route   PUT /stories/edit/:id
+
+exports.updateProfile = async (req, res) => {
+  try {
+    let user = await User.findById(req.params.id).lean()
+
+    if (!user) {
+      return res.render('error/404')
+    }
+    if (user._id != req.user.id) {
+      res.redirect('/dashboard')
+    } else {
+      user = await User.findOneAndUpdate({ _id: req.params.id }, req.body, {
+        new: true,
+        runValidators: true
+      })
+      res.redirect('/dashboard')
+    }
+  } catch (err) {
+    console.error(err)
+    return res.render('error/500')
+  }
 }

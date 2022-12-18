@@ -89,9 +89,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
 
 // Routes
-//app.use('/', require('./routes/index'))
 app.use('/', mainRoutes);
-// app.use('/auth', require('./routes/auth'))
 app.use('/stories', storiesRoutes);
 app.use('/api/v1/stories', require('./routes/map'));
 

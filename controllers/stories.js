@@ -111,6 +111,7 @@ module.exports = {
                     new: true,
                     runValidators: true
                 })
+                console.log(story)
 
                 res.redirect('/dashboard')
             }
