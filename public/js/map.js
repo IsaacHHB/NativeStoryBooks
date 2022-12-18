@@ -57,9 +57,9 @@ async function getMap() {
               <p class="scroll">${feature.properties.body}</p>`
             )
         )
-        //! Trying adding anchor tag to the nav bar with route to /profile/edit/:id--------------------------------->
-        editRoute.setHTML(`<a href="/profile/edit/${feature.properties.userId}">Edit Profile</a>`)
         .addTo(map);
+        //! Trying adding anchor tag to the nav bar with route to /profile/edit/:id--------------------------------->
+        editRoute.setHTML(`<a href="/profile/edit/${feature.properties.userId}">Edit Profile</a>`);
     }
 }
 
